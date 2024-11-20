@@ -1,4 +1,11 @@
 import requests
+import os
+
+def clear(): 
+    if os.name == 'nt': 
+        os.system('cls') 
+    else:
+        os.system('clear')
 
 def get_conversion_rate(base_currency, target_currency):
     url = f"https://api.exchangerate-api.com/v4/latest/{base_currency}"
@@ -33,5 +40,7 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
+
 if __name__ == "__main__":
+    clear()
     main()
